@@ -16,6 +16,9 @@ const notFoundMiddleware = require('./middleware/not-found');
 // middleware setup to access JSON data
 server.use(express.json())
 
+// host public folder (static files)
+server.use(express.static('./public'));
+
 server.get('/' , (req, res) => {
     res.send("RESTful API for managing a simple book database.");
 })
